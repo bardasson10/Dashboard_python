@@ -23,6 +23,7 @@ def build_sidebar():
     return page
 
 def build_main(page):
+    filtroDinamico()
     # Calcula os KPIs
     total_vendas = somaVendas();
     total_transacoes = qtdTransacoes();
@@ -49,19 +50,16 @@ def build_main(page):
     with col6:
         st.subheader('Percentual de sucesso')
         st.metric(label="", value=f"{taxa_sucesso:,.2f}%".replace('.', ','))
-        
+
     st.write('')
-    
-    filtro = filtroDinamico()
-    print(filtro)
-    
+
     if page == pageVendas:
         vendasProdutos();
     elif page == pageCliente:
         clientes();
     else:
         st.error('Page not found')
-        
+
 st.markdown("""
         <style>
             .streamlit-expanderHeader {
