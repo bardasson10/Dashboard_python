@@ -1,12 +1,5 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import yfinance as yf
 import plotly.express as px
-from datetime import datetime
-from streamlit_extras.metric_cards import style_metric_cards
-from streamlit_extras.grid import grid
-
 from data.bancoDeDados import faixaEtariaAnalise, taxaPerdaTransportadora, perdaPorTransportadoraFaixaEtaria
 
 def clientes():

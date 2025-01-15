@@ -2,7 +2,7 @@
 import streamlit as st
 from vendas.FTC_vendas import vendasProdutos
 from clientes.DIM_clientes import clientes
-from data.bancoDeDados import getAllVendas, getAllClientes, somaVendas, qtdTransacoes, vendasValidas, qtdClientes, taxaSucesso, filtroDinamico
+from data.bancoDeDados import  somaVendas, qtdTransacoes, vendasValidas, qtdClientes, taxaSucesso, filtroDinamico
 
 
 info4_logo = "https://www.info4.com.br/en-US/_site_imagens/info4-logo-pr-br.png"
