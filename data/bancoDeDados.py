@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 
-dadosVendas = pd.read_excel('data\FCT_Compras.xlsx')
-dadosClientes = pd.read_excel('data\DIM_Clientes.xlsx')
+dadosVendas = pd.read_excel('data/FCT_Compras.xlsx')
+dadosClientes = pd.read_excel('data/DIM_Clientes.xlsx')
 
 dadosFiltrados = pd.DataFrame()
 
