@@ -23,27 +23,14 @@ def build_sidebar():
     return page
 
 def build_main(page):
-    filtro = filtroDinamico()
-    print(filtro)
-    if page == pageVendas:
-        vendasProdutos();
-    elif page == pageCliente:
-        clientes();
-    else:
-        st.error('Page not found')
-       
-    
     # Calcula os KPIs
     total_vendas = somaVendas();
     total_transacoes = qtdTransacoes();
     total_vendas_validas = vendasValidas();
     total_clientes = qtdClientes();
     taxa_sucesso = taxaSucesso();
-
-    # Configura o layout de colunas com estilo
+    
     col1, col2, col3, col4, col5, col6 = st.columns(6);
-
-    # Adiciona os KPIs às colunas com estilo
     with col1:
         st.subheader('Valor em vendas')
         st.metric(label="", value=f"R$ {total_vendas:,.2f}".replace('.', ',').replace(',', '.', 1).replace(',', '.', 1))
@@ -62,6 +49,18 @@ def build_main(page):
     with col6:
         st.subheader('Percentual de sucesso')
         st.metric(label="", value=f"{taxa_sucesso:,.2f}%".replace('.', ','))
+        
+    st.write('')
+    
+    filtro = filtroDinamico()
+    print(filtro)
+    
+    if page == pageVendas:
+        vendasProdutos();
+    elif page == pageCliente:
+        clientes();
+    else:
+        st.error('Page not found')
         
 st.markdown("""
         <style>
