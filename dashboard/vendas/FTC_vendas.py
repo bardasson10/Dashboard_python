@@ -7,12 +7,10 @@ import pydeck as pdk
 from data.bancoDeDados import  formaPagamentoAoLongoTempo, statusTransacoes, visaoGeograficaValorTotalComprado, visaoGeograficaValorTotalComprado2, shareValorProduto
 
 def vendasProdutos():
-    
-    
+
     vendas_geo_total = visaoGeograficaValorTotalComprado();
     vendas_geo_total2 = visaoGeograficaValorTotalComprado2();
     share_produto = shareValorProduto();
-    
     cl1, cl2 = st.columns(2)
 
     with cl1:
