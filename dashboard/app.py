@@ -60,32 +60,43 @@ def build_main(page):
     else:
         st.error('Page not found')
 
-st.markdown("""
-        <style>
-            .streamlit-expanderHeader {
-                font-size: 18px !important;
-                text-align: center;
-            }
-            
-            .stMetric {
-                background-color: #0f0f0f;  /* Cor de fundo */
-                border-radius: 10px;         /* Bordas arredondadas */
-                padding: 20px;               /* Espaçamento interno */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Sombra */
-                font-size: 20px;             /* Tamanho da fonte */
-                font-weight: bold;           /* Peso da fonte */
-        }
-
-            .stMetric .stMetricValue {
-                color: #79f2dc;  /* Cor do valor */
-                font-size: 26px; /* Tamanho do valor */
-        }
-
-            .stMetric .stMetricLabel {
-                color: #757575;  /* Cor do título */
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    
 page = build_sidebar()
 build_main(page)
+
+st.markdown("""
+    <style>
+        html, body, [class*="css"] {
+            font-size: 8px !important; /* Ajuste o valor conforme necessário */
+        }
+        .streamlit-expanderHeader {
+        font-size: 14px !important;
+        text-align: center;
+        }
+        
+        .stMetric {
+        background-color: #0f0f0f;  /* Cor de fundo */
+        border-radius: 10px;         /* Bordas arredondadas */
+        padding: 20px;               /* Espaçamento interno */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Sombra */
+        font-size: 15px;             /* Tamanho da fonte */
+        font-weight: bold;           /* Peso da fonte */
+    }
+
+        .stMetric .stMetricValue {
+        color: #79f2dc;  /* Cor do valor */
+        font-size: 17px; /* Tamanho do valor */
+    }
+
+        .stMetric .stMetricLabel {
+        color: #757575;  /* Cor do título */
+    }
+
+        .stSubheader {
+        font-size: 14px; /* Tamanho do texto st.subheader */
+    }
+
+        .stTitle {
+        font-size: 18px; /* Tamanho do texto st.title */
+    }
+    </style>
+    """, unsafe_allow_html=True)
