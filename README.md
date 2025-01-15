@@ -39,21 +39,19 @@ git clone <URL_DO_REPOSITORIO>
 ### 2. Navegue até o diretório do projeto
 
 ```bash
-cd <NOME_DO_DIRETORIO>
+cd dashboard
 ```
 
 ### 3. Crie e ative um ambiente virtual (opcional, mas recomendado)
 
 **No Windows:**
 ```bash
-python -m venv venv
-venv\Scripts\activate
+dashboard\Scripts\activate
 ```
 
 **No Mac/Linux:**
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+source dashboard/bin/activate
 ```
 
 ### 4. Instale as dependências
