@@ -3,6 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+venv/  # Adicionado aqui
+
 # C extensions
 *.so
 
@@ -74,6 +84,8 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
+
+
 
 # Jupyter Notebook
 .ipynb_checkpoints
