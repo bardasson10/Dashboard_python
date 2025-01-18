@@ -6,97 +6,123 @@ Siga os passos abaixo para configurar e executar este projeto em sua máquina lo
 
 ## Pré-requisitos
 
-1. **Python**: Certifique-se de que você tem o Python instalado (versão 3.10 ou superior).
-   - Para verificar, use:
-     ```bash
-     python --version
-     ```
-   - Se necessário, faça o download [aqui](https://www.python.org/downloads/).
+1. **Python 3.10 ou superior**  
+   Verifique se o Python está instalado na sua máquina:
+   ```bash
+   python --version
+   ```
+   Caso necessário, faça o download [aqui](https://www.python.org/downloads/).
 
-2. **Pip**: O gerenciador de pacotes do Python deve estar instalado.
-   - Para verificar, use:
-     ```bash
-     pip --version
-     ```
+2. **Pip**  
+   O gerenciador de pacotes do Python deve estar instalado. Verifique com:
+   ```bash
+   pip --version
+   ```
 
-3. **Virtualenv (Opcional)**: Recomendado para criar um ambiente virtual isolado.
-   - Para instalar:
-     ```bash
-     pip install virtualenv
-     ```
+3. **Virtualenv (Recomendado)**  
+   É recomendado criar um ambiente virtual isolado para este projeto. Caso não tenha o `virtualenv` instalado:
+   ```bash
+   pip install virtualenv
+   ```
 
 ---
 
-## Passo a Passo
+## Passo a Passo para Configuração
 
 ### 1. Clone o repositório
 
-Use o comando abaixo para clonar o projeto para o seu computador:
+Use o comando abaixo para clonar o projeto para sua máquina local:
 ```bash
 git clone <URL_DO_REPOSITORIO>
 ```
 
-### 2. Navegue até o diretório do projeto
+### 2. Acesse o diretório do projeto
 
+Navegue até o diretório clonado:
 ```bash
-cd dashboard
+cd <NOME_DO_PROJETO>
 ```
 
-### 3. Crie e ative um ambiente virtual (opcional, mas recomendado)
+### 3. Crie um ambiente virtual
 
-**No Windows:**
+Crie um ambiente virtual com o nome **`venv`**:
+
+**Windows:**
 ```bash
-dashboard\Scripts\activate
+python -m venv venv
+venv\Scripts\activate
 ```
 
-**No Mac/Linux:**
+**Mac/Linux:**
 ```bash
-source dashboard/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ### 4. Instale as dependências
 
-Certifique-se de estar no diretório do projeto e instale as bibliotecas necessárias:
+Certifique-se de estar no diretório do projeto e execute:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Verifique as configurações do projeto
+---
 
-- Certifique-se de que os arquivos e caminhos utilizados no código estão corretos, especialmente para arquivos como `FCT_Compras.xlsx`.
-- Caso necessário, atualize os caminhos diretamente no código ou mova os arquivos para os diretórios esperados.
+## Execução do Projeto
 
-### 6. Execute o projeto localmente
+### 1. Verifique as configurações
 
-Inicie o aplicativo com o comando:
+- Certifique-se de que os arquivos necessários, como `FCT_Compras.xlsx`, estão no diretório correto. 
+- Caso necessário, atualize os caminhos no arquivo `bancoDeDados.py` ou mova os arquivos para os locais esperados.
+
+### 2. Execute o aplicativo
+
+Inicie o Streamlit com o comando:
 ```bash
 streamlit run app.py
 ```
 
-### 7. Acesse o aplicativo
+### 3. Acesse o projeto no navegador
 
-- Após executar o comando, um link será gerado no terminal (algo como `http://localhost:8501`).
-- Abra esse link no navegador para acessar o projeto.
+- Após executar o comando, um link será gerado no terminal, como:  
+  `http://localhost:8501`
+- Abra esse link em seu navegador para visualizar o aplicativo.
 
 ---
 
 ## Solução de Problemas
 
-### Arquivo não encontrado
+### 1. Ambiente virtual não ativado
+Certifique-se de que o ambiente virtual foi ativado antes de executar o projeto. Ative o ambiente novamente caso precise:
+- **Windows:**  
+  ```bash
+  venv\Scripts\activate
+  ```
+- **Mac/Linux:**  
+  ```bash
+  source venv/bin/activate
+  ```
 
-Se o erro `FileNotFoundError` ocorrer, verifique:
-- Se o arquivo `FCT_Compras.xlsx` existe no caminho correto.
-- Corrija o caminho no arquivo `bancoDeDados.py`.
+### 2. Erro `FileNotFoundError`
+- Verifique se o arquivo `FCT_Compras.xlsx` está no caminho correto.
+- Ajuste o caminho no código, se necessário.
 
-### Dependências
-
-Se encontrar erro relacionado a dependências:
-- Certifique-se de ter executado o comando `pip install -r requirements.txt` corretamente.
-- Use:
+### 3. Dependências ausentes
+- Se algum erro relacionado a dependências ocorrer, certifique-se de ter instalado todas as bibliotecas com:
+  ```bash
+  pip install -r requirements.txt
+  ```
+- Para instalar uma dependência manualmente, use:
   ```bash
   pip install <nome_da_dependencia>
   ```
-  para instalar dependências faltantes manualmente.
 
 ---
 
+### Nota importante: 
+
+Certifique-se de adicionar a pasta `venv` ao arquivo `.gitignore` para evitar que o ambiente virtual seja enviado ao repositório. O arquivo `.gitignore` já inclui uma linha para ignorar `venv/`. Caso não esteja, adicione:
+
+```plaintext
+venv/
+```
